@@ -1,3 +1,25 @@
-body{
-    background-color: aqua;
+body {
+  background-color:black;
+  background-image: url(pex.jpg);
+  color: rgb(255, 251, 251);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+body * {
+  font-family: Arial;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight:400;
+  margin: 0;
+}
+a,
+a:hover,
+a:visited {
+  color: rgb(33, 196, 218);
+  text-decoration: none;
 }

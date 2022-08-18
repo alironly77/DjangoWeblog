@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>weblog</title>
+        <link rel="stylesheet" href="{% static 'styles.css'%}"></head>
+    
+<body>
+    <h1><a href="{% url 'articles_app:Home' %}">Home</a></h1>
+    {%block content%}
+    {%endblock%}
+</body>
+
+</html>

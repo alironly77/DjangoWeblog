@@ -1,21 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+    {%extends 'base.html'%}
 
-<head>
-    <meta charset="UTF-8">
-    <title>WebLog</title>
-    <link rel="stylesheet" href="{% static 'styles.css'%}">
-    <h1>Article List</h1>
+
+    {% block content %}
+    
+    <p></p><h1>Article List</h1></p>
     {% for i in art %}
-    <h2><a href="#">{{i.title}}</a></h2>
+    <h2><a href="{% url 'articles_app:detail' slug=i.slug %}">{{i.title}}</a></h2>
     <p>{{i.snippet}}</p>
     <p>{{i.date}}</p>
     {% endfor %}
-</head>
-
-<body>
-
-</body>
-
-</html>
+    {% endblock content%}
