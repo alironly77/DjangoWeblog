@@ -22,3 +22,11 @@ a:visited {
   color: rgb(33, 196, 218);
   text-decoration: none;
 }
+nav{
+  display: flex;
+
+}
+nav h1{
+  margin: 0 5px;
+
+}
