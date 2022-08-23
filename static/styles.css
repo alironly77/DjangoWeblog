@@ -1,6 +1,6 @@
 body {
-  background-color:black;
-  background-image: url(pex.jpg);
+  background-color: black;
+  background-image: url(01.jpg);
   color: rgb(255, 251, 251);
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,8 +14,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight:400;
-  margin: 0;
+  font-weight: 400;
 }
 a,
 a:hover,
