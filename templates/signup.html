@@ -5,7 +5,10 @@
 <h1>SignUp</h1>
 <form action="{% url 'accounts:signup' %}" method="post">
     {% csrf_token %}
-    {{form}}
+
+    {% for field in form %}
+        <p></p>
+    {% endfor %}
     <input type="submit" value="Signup">
 </form>
 {% endblock content%}
