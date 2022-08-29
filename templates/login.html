@@ -4,7 +4,7 @@
 {% block content %}
 <h1>Login</h1>
 <form action="{% url 'accounts:login' %}" method="post">
-    {{form}}
+    {{ form }}
     {% csrf_token %}
     {%if request.GET.next %}
     <input type="hidden" name="next" value="{{request.GET.next}}">

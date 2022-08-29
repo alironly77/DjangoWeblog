@@ -1,0 +1,21 @@
+# python file formats
+*.pyc
+*.mo
+*.po
+
+# img file formats
+*.png
+*.jpg
+
+# database files
+*.sqlite3
+
+# IDE auto-generated files
+.idea
+__pycache__/
+
+# virtual environments
+.env
+.venv
+venv/
+env/
