@@ -6,40 +6,37 @@
         <meta charset="UTF-8">
         <title>weblog</title>
         <link rel="stylesheet" href="{% static 'styles.css'%}"></head>
-    
-<body>
-    <nav>
-        <h1><a href="{% url 'articles_app:Home' %}">Home</a></h1>
-        <h1><a href="{% url 'accounts:signup' %}">Signup</a></h1>
-    </nav>
-    <nav>
-        <ul>
-            {% if user.is_authenticated %}
-            <li>
-                <form class="logout_link" action="{% url 'accounts:logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">logout</button>
 
-                </form>
-            </li>
-            <li>
+
+    <body>
+        <nav>
+            <h1><a href="{% url 'articles_app:Home' %}">Home</a></h1>
+
+
+        </nav>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                <button><a href="{% url 'accounts:logout' %}">logout</a></button>
+
+                
+
                 <a href="{% url 'articles_app:create'%}">Create New Article</a>
-            </li>
-            {% else %}
-            <li>
-                <a href="{% url 'accounts:login'%}" >Login</a>
-            </li>
-            <li>
-                <a href="{% url 'accounts:signup'%}">Signup</a>
-            </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'accounts:login'%}">Login</a>
+                </li>
+                <li>
+                    <a href="{% url 'accounts:signup'%}">Signup</a>
+                </li>
 
-            {% endif %}
-             
-        </ul>
-    </nav>
+                {% endif %}
 
-    {%block content%}
-    {%endblock%}
-</body>
+            </ul>
+        </nav>
+
+        {%block content%}
+        {%endblock%}
+    </body>
 
 </html>

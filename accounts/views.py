@@ -31,6 +31,5 @@ def login_page(request):
 
 
 def logout_page(request):
-    if request.method == 'POST':
-        logout(request)
+    logout(request)
     return redirect('articles_app:Home')
