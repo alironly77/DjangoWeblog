@@ -1,18 +1,25 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
-class CustomUserForm(forms.ModelForm):
-	email = ...
-	username = ...
-	password1 = m ...
-	password2 = forms.CharField() # widget=forms.PasswordInput()
+class SignupForm(forms.ModelForm):
+    password=forms.CharField(widget=forms.PasswordInput())
+    confirm_password=forms.CharField(widget=forms.PasswordInput())
+    class Meta:
+        
+        model=User
+        fields=('username','email','password')
 
-	class Meta:
-		model = CustomUser
-		fields = ('email', 'usenrame', 'password1', 'password2')
+    def clean(self):
+        cleaned_data = super(SignupForm, self).clean()
+        password = cleaned_data.get("password")
+        confirm_password = cleaned_data.get("confirm_password")
 
-	def clean(self):
-		cd = self.cleaned_data
-		cd['password2'] == cd ['password1']		
-		return cd['password2']
+        if password != confirm_password:
+            raise forms.ValidationError(
+                "password and confirm_password does not match"
+            )
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=32)
+    password = forms.CharField(max_length=16)
